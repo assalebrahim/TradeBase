@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+.sidebar-link {
+  @apply font-medium px-5 py-3 hover:bg-[#D9D9D9] hover:font-bold rounded-lg
+}
+
+.module-border {
+  @apply border border-black rounded-md;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.module-buttons {
+  @apply grid grid-cols-3 gap-4 p-5
+}
+
+.menu-button {
+  @apply text-black bg-[#D9D9D9] px-10 py-5 rounded-lg hover:bg-[#cecece] font-medium min-w-[50px]
+}
+
+.module-heading {
+  @apply font-bold text-3xl
+}
