@@ -13,6 +13,7 @@ import PurchaseReturn from './pages/purchase/PurchaseReturn'
 import Purchase from './pages/purchase/Purchase'
 import Items from './pages/stock/Items'
 import Stock from './pages/stock/Stock'
+import Table from './components/table/Table'
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
       <div className='flex flex-1'>
         <Sidebar />
 
-        <div className='flex-1 m-6'>
+        <div className='flex flex-col flex-1 m-6'>
 
           <Routes>
             <Route path='/sales' element={<Sales />} />
@@ -37,7 +38,8 @@ const App = () => {
 
             <Route path='/stock' element={<Stock />} />
             <Route path='/stock/items' element={<Items />} />
-          </Routes>``
+
+          </Routes>
 
         </div>
       </div>
