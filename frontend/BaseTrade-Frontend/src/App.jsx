@@ -1,34 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import Sidebar from './components/Sidebar'
+import Navbar from './components/Navbar'
+import Sales from './pages/sales/Sales'
+import { Route, Router, Routes } from 'react-router-dom'
+import Quotation from './pages/sales/Quotation'
+import SalesInvoice from './pages/sales/SalesInvoice'
+import SalesReturn from './pages/sales/SalesReturn'
+import PurchaseOrder from './pages/purchase/PurchaseOrder'
+import PurchaseInvoice from './pages/purchase/PurchaseInvoice'
+import PurchaseReturn from './pages/purchase/PurchaseReturn'
+import Purchase from './pages/purchase/Purchase'
+import Items from './pages/stock/Items'
+import Stock from './pages/stock/Stock'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='flex flex-col min-h-screen'>
+      <Navbar />
+      <div className='flex flex-1'>
+        <Sidebar />
+
+        <div className='flex-1 m-6'>
+
+          <Routes>
+            <Route path='/sales' element={<Sales />} />
+            <Route path='/sales/quotation' element={<Quotation />} />
+            <Route path='/sales/sales-invoice' element={<SalesInvoice />} />
+            <Route path='/sales/sales-return' element={<SalesReturn />} />
+
+            <Route path='/purchase' element={<Purchase />} />
+            <Route path='/purchase/purchase-order' element={<PurchaseOrder />} />
+            <Route path='/purchase/purchase-invoice' element={<PurchaseInvoice />} />
+            <Route path='/purchase/purchase-return' element={<PurchaseReturn />} />
+
+
+            <Route path='/stock' element={<Stock />} />
+            <Route path='/stock/items' element={<Items />} />
+          </Routes>
+
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
