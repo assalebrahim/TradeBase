@@ -1,0 +1,40 @@
+import React from 'react'
+
+export const Invoice = () => {
+    return (
+        <div className='flex flex-1 flex-col h-[70vh] module-border'>
+            <div className='relative px-10 py-5'>
+                <h3 className='module-subheading'>Details</h3>
+                <div className='module-buttons'>
+                    <div className='col-start-1 row-start-1 flex flex-col'>
+                        <label htmlFor="invNumber">Invoice Number</label>
+                        <input type="text" name='invNumber' className='bg-[#D9D9D9] py-1 rounded-md px-2 focus:none' />
+                    </div>
+                    <div className='col-start-2 row-start-1 flex flex-col'>
+                        <label htmlFor="date">Date</label>
+                        <input type="date" name='date' className='bg-[#D9D9D9] py-1 rounded-md px-2 focus:none' />
+                    </div>
+                    <div className='col-start-1 row-start-2 flex flex-col'>
+                        <label htmlFor="customer">Customer</label>
+                        <input type="text" name="customer" className='bg-[#D9D9D9] py-1 rounded-md px-2 focus:none' />
+                    </div>
+                </div>
+                <div className='border-bottom'></div>
+            </div>
+            <div className='px-10 py-5'>
+                <h2 className='module-subheading'>Items</h2>
+                <div className='flex mt-5 gap-1'>
+                    <div className='bg-[#D9D9D9] px-2 py-2 rounded-lg flex justify-evenly flex-20'>
+                        <input type="text" placeholder='Product Name / Code' className='flex-4 focus:outline-none' />
+                        <input type="text" placeholder='Qty' className='flex-2 focus:outline-none' />
+                        <input type="text" placeholder='Amount' className='flex-2 focus:outline-none' />
+                        <input type="text" placeholder='Dis %' className='flex-2 focus:outline-none' />
+                        <input type="text" placeholder='Dis Amt' className='flex-2 focus:outline-none' />
+                    </div>
+                    <button className='text-white bg-black font-extrabold flex-1 rounded-lg cursor-pointer'>+</button>
+                </div>
+                <div></div>
+            </div>
+        </div>
+    )
+}

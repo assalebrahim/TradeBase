@@ -1,4 +1,4 @@
-export const COLUMNS = [
+export const REGISTER_COLUMNS = [
     {
         id: 'inv-number',
         header: 'Inv Number',

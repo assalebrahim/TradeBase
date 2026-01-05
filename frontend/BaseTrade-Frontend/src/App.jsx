@@ -14,6 +14,7 @@ import Purchase from './pages/purchase/Purchase'
 import Items from './pages/stock/Items'
 import Stock from './pages/stock/Stock'
 import Table from './components/table/Table'
+import { Invoice } from './components/forms/Invoice'
 
 const App = () => {
   return (
@@ -38,7 +39,7 @@ const App = () => {
 
             <Route path='/stock' element={<Stock />} />
             <Route path='/stock/items' element={<Items />} />
-
+            <Route path='/invoice' element={<Invoice />} />
           </Routes>
 
         </div>
