@@ -13,7 +13,7 @@ import PurchaseReturn from './pages/purchase/PurchaseReturn'
 import Purchase from './pages/purchase/Purchase'
 import Items from './pages/stock/Items'
 import Stock from './pages/stock/Stock'
-import Table from './components/table/Table'
+import RegisterTable from './components/table/RegisterTable'
 import { Invoice } from './components/forms/Invoice'
 
 const App = () => {

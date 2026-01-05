@@ -1,17 +1,17 @@
 import React, { useMemo, } from 'react'
-import { COLUMNS } from './columns'
+import { REGISTER_COLUMNS } from './columns'
 import MOCK_DATA from './MOCK_DATA.json'
 import {
     useReactTable,
     getCoreRowModel,
     getSortedRowModel,
-    getFilteredRowModel,
+    // getFilteredRowModel,
     flexRender
 } from '@tanstack/react-table'
 
-const Table = () => {
+const RegisterTable = () => {
 
-    const columns = useMemo(() => COLUMNS, [])
+    const columns = useMemo(() => REGISTER_COLUMNS, [])
     const data = useMemo(() => MOCK_DATA, [])
 
     // const [invFilter, setInvFilter] = useState("")
@@ -24,7 +24,7 @@ const Table = () => {
             columns,
             getCoreRowModel: getCoreRowModel(),
             getSortedRowModel: getSortedRowModel(),
-            getFilteredRowModel: getFilteredRowModel(),
+            // getFilteredRowModel: getFilteredRowModel(),
             // state: {
             //     columnFilters: [
             //         { id: 'inv-number', value: invFilter },
@@ -103,4 +103,4 @@ const Table = () => {
     )
 }
 
-export default Table
+export default RegisterTable

@@ -6,6 +6,7 @@
 
 body {
   overflow: hidden;
+  /* max-width: 1800px; */
 }
 
 .sidebar-link {
@@ -47,9 +48,49 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+.border-bottom-th {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
 
+.table-head-border-right>*:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.3)
+}
 
+.items-table-head:nth-child(1) {
+  width: 30px;
+}
 
+.items-table-head:nth-child(2) {
+  width: 450px
+}
+
+.items-table-head:nth-child(3) {
+  width: 100px
+}
+
+.items-table-head:nth-child(4) {
+  width: 120px
+}
+
+.items-table-head:nth-child(5) {
+  width: 150px
+}
+
+.items-table-head:nth-child(6) {
+  width: 80px
+}
+
+.items-table-head:nth-child(7) {
+  width: 120px
+}
+
+.items-table-head:nth-child(8) {
+  width: 170px
+}
+
+select option {
+  @apply rounded-lg
+}
 
 
 
@@ -70,4 +111,14 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 2px;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
