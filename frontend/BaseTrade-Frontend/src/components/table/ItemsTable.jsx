@@ -1,95 +1,15 @@
 import React, { useMemo } from 'react'
 import { ITEM_COLUMNS } from './columns'
 import { flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table'
+import { useInvoice } from '../../context/InvoiceContext'
 
-const mockData = [
-    {
-        item: "CLUTCH CABLE",
-        qty: 2,
-        rate: 150,
-        netRate: 300,
-        vat: 18,
-        vatAmt: 54,
-        netAmt: 354
-    },
-    {
-        item: "CLUTCH CABLE",
-        qty: 2,
-        rate: 150,
-        netRate: 300,
-        vat: 18,
-        vatAmt: 54,
-        netAmt: 354
-    },
-    {
-        item: "CLUTCH CABLE",
-        qty: 2,
-        rate: 150,
-        netRate: 300,
-        vat: 18,
-        vatAmt: 54,
-        netAmt: 354
-    },
-    {
-        item: "CLUTCH CABLE",
-        qty: 2,
-        rate: 150,
-        netRate: 300,
-        vat: 18,
-        vatAmt: 54,
-        netAmt: 354
-    },
-    {
-        item: "CLUTCH CABLE",
-        qty: 2,
-        rate: 150,
-        netRate: 300,
-        vat: 18,
-        vatAmt: 54,
-        netAmt: 354
-    },
-    {
-        item: "CLUTCH CABLE",
-        qty: 2,
-        rate: 150,
-        netRate: 300,
-        vat: 18,
-        vatAmt: 54,
-        netAmt: 354
-    },
-    {
-        item: "CLUTCH CABLE",
-        qty: 2,
-        rate: 150,
-        netRate: 300,
-        vat: 18,
-        vatAmt: 54,
-        netAmt: 354
-    },
-    {
-        item: "CLUTCH CABLE",
-        qty: 2,
-        rate: 150,
-        netRate: 300,
-        vat: 18,
-        vatAmt: 54,
-        netAmt: 354
-    },
-    {
-        item: "CLUTCH CABLE",
-        qty: 2,
-        rate: 150,
-        netRate: 300,
-        vat: 18,
-        vatAmt: 54,
-        netAmt: 354
-    }
-]
 
 export const ItemTable = (total) => {
 
+
+    const { itemsData } = useInvoice()
     const columns = useMemo(() => ITEM_COLUMNS, [])
-    const data = useMemo(() => mockData, [])
+    const data = useMemo(() => itemsData, [])
 
     const table = useReactTable({
         data,
@@ -100,7 +20,7 @@ export const ItemTable = (total) => {
 
     return (
         <div className='h-[30vh] overflow-y-scroll'>
-            <table className='w-full table-fixed'>
+            <table className='w-full table-fixed h-full'>
                 <thead className='border-bottom-th sticky top-0 z-10'>
                     {table.getHeaderGroups().map((headerGroup) => (
                         <tr key={headerGroup.id} className='table-head-border-right bg-[#D9D9D9] rounded-tl-lg rounded-tr-md'>
@@ -135,6 +55,7 @@ export const ItemTable = (total) => {
                     )
                     }
                 </tbody>
+
                 <tfoot className='border-t-[0.5px] border-t-black/30 z-10 bg-[#D9D9D9] sticky bottom-0 w-full'>
                     <tr className='table-head-border-right'>
                         <td></td>

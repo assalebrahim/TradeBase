@@ -15,36 +15,40 @@ import Items from './pages/stock/Items'
 import Stock from './pages/stock/Stock'
 import RegisterTable from './components/table/RegisterTable'
 import { Invoice } from './components/forms/Invoice'
+import { AppProvider } from './context/AppProvider'
 
 const App = () => {
   return (
-    <div className='flex flex-col min-h-screen'>
-      <Navbar />
-      <div className='flex flex-1'>
-        <Sidebar />
+    <AppProvider>
 
-        <div className='flex flex-col flex-1 m-6'>
+      <div className='flex flex-col min-h-screen'>
+        <Navbar />
+        <div className='flex flex-1'>
+          <Sidebar />
 
-          <Routes>
-            <Route path='/sales' element={<Sales />} />
-            <Route path='/sales/quotation' element={<Quotation />} />
-            <Route path='/sales/sales-invoice' element={<SalesInvoice />} />
-            <Route path='/sales/sales-return' element={<SalesReturn />} />
+          <div className='flex flex-col flex-1 m-6'>
 
-            <Route path='/purchase' element={<Purchase />} />
-            <Route path='/purchase/purchase-order' element={<PurchaseOrder />} />
-            <Route path='/purchase/purchase-invoice' element={<PurchaseInvoice />} />
-            <Route path='/purchase/purchase-return' element={<PurchaseReturn />} />
+            <Routes>
+              <Route path='/sales' element={<Sales />} />
+              <Route path='/sales/quotation' element={<Quotation />} />
+              <Route path='/sales/sales-invoice' element={<SalesInvoice />} />
+              <Route path='/sales/sales-return' element={<SalesReturn />} />
+
+              <Route path='/purchase' element={<Purchase />} />
+              <Route path='/purchase/purchase-order' element={<PurchaseOrder />} />
+              <Route path='/purchase/purchase-invoice' element={<PurchaseInvoice />} />
+              <Route path='/purchase/purchase-return' element={<PurchaseReturn />} />
 
 
-            <Route path='/stock' element={<Stock />} />
-            <Route path='/stock/items' element={<Items />} />
-            <Route path='/invoice' element={<Invoice />} />
-          </Routes>
+              <Route path='/stock' element={<Stock />} />
+              <Route path='/stock/items' element={<Items />} />
+              <Route path='/invoice' element={<Invoice />} />
+            </Routes>
 
+          </div>
         </div>
       </div>
-    </div>
+    </AppProvider>
   )
 }
 
